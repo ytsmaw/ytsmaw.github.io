@@ -1,0 +1,221 @@
+<head>
+<style type="text/css">
+
+    body {
+     margin-top: 0px;
+     margin-right: 0px;
+     margin-bottom: 0px;
+     margin-left: 0px
+    }
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+<title>Willem Ytsma!</title>
+
+<style id = "nice">
+    a:link{color:#666;} a:visited{color:#FF0000;} 
+</style>
+
+<div style = "width:100%" id="mother">
+    <div class = "info">
+        <h2 id="title">Willem Ytsma</h2>
+        <p id = "email">
+        Email: <a href="mailto:wytsma4000000@gmail.com?Subject=About%20your%20photos" target="_top" id = "wow">wytsma4000000@gmail.com</a>
+        </p>
+        
+        <br>Photo Albums:<br><br>
+        
+        <a href = "https://goo.gl/photos/Cthp5yF2bGQvA4Uh9"  target="_blank" class = "albums" id="powel">Powel House Fringe (2016)</a><br>
+        <a href = "https://goo.gl/photos/fW8Ps2w44so48RmG9"  target="_blank" class = "albums" id="dance">Master Dance (2015)</a><br>
+        <a href = "https://goo.gl/photos/zsWDUJmK3HvDDecE9"  target="_blank" class = "albums" id="year">The year so far (2015)</a><br>
+        <a href = "https://goo.gl/photos/qx9UsjWWZYDEhqXdA"  target="_blank" class = "albums" id="friends">Friends</a><br>
+        <a href = "https://goo.gl/photos/hVXzReTkCw8XNAu7A"  target="_blank" class = "albums" id="sav">Savannah (2015)</a><br>
+        <a href = "https://goo.gl/photos/64oKXu63ZqcSfMmm7"  target="_blank" class = "albums" id="byz">Byzantine Empire (2014)</a><br>
+        <a href = "https://goo.gl/photos/wydQCVTAnAfAttyZ6"  target="_blank" class = "albums" id="music">Music (2014)</a><br>
+        <a href = "https://goo.gl/photos/GhjLxdnB3JhhDmGa8" target="_blank" class = "albums" id="sports">Sports (2013)</a><br>
+        <a href = "https://goo.gl/photos/rftCzJmML7B17XzP9" target="_blank"class = "albums" id="diy">DIY Theater (2013)</a></br>
+        <a href = "https://goo.gl/photos/uhdfEPzn2HpdpURB8" target="_blank" class = "albums" id="high">Highschool Theater (2012)</a>
+    </div>
+        
+    <div class = "container" id = "container">
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+var powel = "http://i.imgur.com/BYk8Nhl.jpg";
+var dance = "http://i.imgur.com/xV7U0hG.jpg";
+var year = "http://i.imgur.com/shtflMa.jpg";
+var friends = "http://i.imgur.com/V9rnpMk.jpg";
+var sav = "http://i.imgur.com/PPNomTJ.jpg";
+var byz = "http://i.imgur.com/jPNkkmp.jpg";
+var music = "http://i.imgur.com/maenAIV.jpg";
+var sports = "http://i.imgur.com/6oFRu7S.jpg";
+var diy = "http://i.imgur.com/ByFTD8N.jpg";
+var high = "http://i.imgur.com/plGI4TC.jpg";
+var def = "http://i.imgur.com/2iBxxh6.jpg";
+
+<!--//--><![CDATA[//><!--
+	var images = new Array()
+	function preload() {
+		for (i = 0; i < preload.arguments.length; i++) {
+			images[i] = new Image()
+			images[i].src = preload.arguments[i]
+		}
+	}
+	preload(
+		powel,dance,year,friends,sav,byz,music,sports,diy,high
+	)
+//--><!]]>
+
+//very nice
+
+
+    function changepic(url){
+        //document.getElementById("container").innerHTML = "url('"+url+"')";
+        document.getElementById("container").style.backgroundImage = "url('"+url+"')";
+        //var powel = document.getElementById("powel");
+        //document.body.style.backgroundColor = url;
+        }
+        
+        //$('#powel').hover(changepic("red"),changepic("blue"));
+        $("#powel").hover(function() {changepic(powel);},function() {changepic(def);});
+        $("#dance").hover(function() {changepic(dance);},function() {changepic(def);});
+        $("#year").hover(function() {changepic(year);},function() {changepic(def);});
+        $("#friends").hover(function() {changepic(friends);},function() {changepic(def);});
+        $("#sav").hover(function() {changepic(sav);},function() {changepic(def);});
+        $("#byz").hover(function() {changepic(byz);},function() {changepic(def);});
+        $("#music").hover(function() {changepic(music);},function() {changepic(def);});
+        $("#sports").hover(function() {changepic(sports);},function() {changepic(def);});
+        $("#diy").hover(function() {changepic(diy);},function() {changepic(def);});
+        $("#high").hover(function() {changepic(high);},function() {changepic(def);});
+
+</script>
+
+<style id = "breakup">
+
+    .container{
+        background-position: center center;
+    }
+</style>
+
+<script type="text/javascript">
+    // break up the screen properly
+    function center(poop){
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var picW = Math.floor(4/3*h);
+        var breakup = document.getElementById("breakup");
+        var setsize = ".container{width: "+picW+"px; margin=0;";
+        //var infoW = w - picW- 20;
+        if(w-picW < 350){
+            var siz = Math.floor(w-370);
+            breakup.innerHTML = setsize+ "width:" +siz+"px;}";
+        }else{
+            breakup.innerHTML = setsize+ "width:"+picW+"px;}";
+        }
+    }    
+    
+    window.onload = center("first time");
+    $( window ).resize(function() {center("resize");});
+        
+        
+
+
+</script>
+
+<style align = "left">
+    
+    .info{
+        font: 15px Trebuchet MS;
+        color: #666;
+        float: left;
+        padding-left: 20px;
+        background: #fff;
+        height: 100%;
+        position: absolute; // Reposition logo from the natural layout
+        left: 0px;
+        top: 0px;
+        width: 350px;
+        height: 100%;
+        z-index: 2;
+    }
+    
+    .container{
+        float: right;
+        color: #fff;
+        height: 100%;
+        background-image: url("http://i.imgur.com/2iBxxh6.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    
+    #infotext{
+       
+    }
+    
+    #title{
+        font: bold 25px;
+        margin-top: 60px;
+        
+    }
+    
+    #email{
+        line-height: 200%;
+    }
+    
+    #pic{
+        background: #000;
+    }
+
+    .albums{
+        
+        line-height: 150%;
+
+        padding-top:5px;
+    }
+    
+</style>
+
+<script type = "text/javascript">
+
+
+
+function randcol(a){
+
+        var rayzie = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+        
+        var sum = 91;
+        var hm = [15, 15, 0, 0, 0, 0];
+        
+        while(sum < 45 || sum > 80){
+            sum = 0;
+            for(var i=0;i<6;i++){
+                hm[i] = Math.floor(Math.random() * 16);
+                sum = sum + hm[i];
+            }
+        }
+        sum = Math.floor(sum / 6);
+        
+        var colkek = "#" + rayzie[hm[0]] + rayzie[hm[1]] + rayzie[hm[2]] + rayzie[hm[3]] + rayzie[hm[4]] + rayzie[hm[5]];
+        return colkek;
+    }
+    
+    function rl(){
+        document.getElementById("nice").innerHTML = " a:link{color:#666; text-decoration:none;} a:visited{color:#666;  text-decoration:none;} a:hover{color:" + randcol(4) +";}";
+    } 
+    
+    window.onblur = rl;
+        
+    document.getElementById("nice").innerHTML = " a:link{color:#666; text-decoration:none;} a:visited{color:#666;  text-decoration:none;} a:hover{color:" + randcol(4) +";}";
+
+</script>
+</body>
