@@ -85,7 +85,7 @@ var music = "/music.jpg";
 var sports = "/sports.jpg";
 var diy = "/diy.jpg";
 var high = "/high.jpg";
-var def = "/def.jpg";
+var def = "https://ytsmaw.github.io/def.jpg";
 var grum = "/grum.jpg";
 var chairz = "/chairz.jpg";
 var plp = "/plp.jpg";
@@ -131,7 +131,6 @@ var plp = "/plp.jpg";
 </script>
 
 <style id = "breakup">
-
     .container{
         background-position: center center;
     }
@@ -144,15 +143,15 @@ var plp = "/plp.jpg";
         var h = window.innerHeight;
         var picW = Math.floor(4/3*h);
         var breakup = document.getElementById("breakup");
-        var setsize = ".container{margin=0;";
+        var setsize = ".container{float: right; margin=0; ";
         //var infoW = w - picW- 20;
         if(w-picW < 350){
             var siz = Math.floor(w-370);
             breakup.innerHTML = setsize+ "width:" +siz+"px;}";
         }else if (w-picW > 700){
 			var siz = Math.floor(w-700);
-            breakup.innerHTML = setsize+ "width:" +siz+"px;}";
-		}
+			breakup.innerHTML = setsize+ "width:" +siz+"px;}";
+	}
 		else{
             breakup.innerHTML = setsize+ "width:"+picW+"px;}";
         }
@@ -184,14 +183,13 @@ var plp = "/plp.jpg";
     }
     
     .container{
-        float: right;
         color: #fff;
         height: 100%;
         background-image: url("/def.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-		position: fixed;
+		postion: fixed right;
     }
 	
 		
