@@ -22,6 +22,7 @@
   </script>
 
 <meta property="og:image" content="http://i.imgur.com/2iBxxh6.jpg" />
+<link rel="shortcut icon" href="/AVATAR.png">
 
 </head>
 
@@ -66,10 +67,9 @@
     <div id="copyright"> { © Willem Ytsma 2016 } </div>
 </div>
 
+<div class="infoback"></div>
     
-<div class = "container" id = "container">
-
-</div>
+<div class = "container" id = "container"></div>
 
 
 
@@ -172,7 +172,6 @@ var plp = "/plp.jpg";
         color: #666;
         float: left;
         padding-left: 20px;
-        background: #fff;
         height: 100%;
         position: absolute; // Reposition logo from the natural layout
         left: 0px;
@@ -181,6 +180,15 @@ var plp = "/plp.jpg";
         height: 100%;
         z-index: 2;
     }
+	
+	.infoback{
+		width:370;
+		height: 100%;
+		background: #fff;
+		position: fixed;
+		top:0px;
+		left: 0px;
+	}
     
     .container{
         color: #fff;
