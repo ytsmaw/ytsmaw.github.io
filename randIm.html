@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:og="http://ogp.me/ns#"
+xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    
+    <link rel="image_src" href="http://i.imgur.com/5U9zagO.jpg" / >
+    <meta property="og:image" content="http://i.imgur.com/5U9zagO.jpg" />
+    <meta property="og:URL" content="anametobeproudof.tumblr.com" />
+    
+</head>
+
+<body>
+<script type="text/javascript">// <![CDATA[
+//url = "http//:i.imgur.com/13jgLAf.gif"
+    //document.write(" <img border='0' src='" + url + "/>");
+    var whop = 0;
+    var siz = "";
+    var img = new Image();
+    var imcode = 0;
+    function code(a){
+        //make a vector of all possible letters and numbers!
+        var ran = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', "a", "b", "c", "d", 'e', "f", "g", "h", "i", "j", "k", "l", "m", "n", 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K' ,'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'];
+        //create a rancom combo of these letters and numbers!
+        if (Math.round(Math.random()*10) < 9){
+            var doce = ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ];
+        }else{
+            var doce = ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ];
+        }
+        
+        return doce;
+        
+    }
+    
+function ranim(url){
+    //create an image object
+    img.id = "SexPalace"
+    img.src = 'http://i.imgur.com/' + imcode + '.gif';
+    //show the image!
+    document.body.appendChild(img);
+    var img1 = document.querySelector('#SexPalace');
+    //check if a real image loaded
+    img1.addEventListener('load', function() {
+        // makde sure it isn't that does not exist image
+        if (img.naturalWidth != 161 && img.naturalHeight != 81 && imcode !=0){
+            whop = 1;
+                    
+            ok(4)
+            
+        }
+        // woo yey image loaded
+    });
+    //basically just creates an event & changes the souce if there is
+    //no real image on the end
+    img.onerror = function(){
+        //document.write(img.alt);
+        if (whop == 0 || img){
+            imcode = code()
+            document.getElementById("prog").innerHTML = imcode
+            img.src = 'http://i.imgur.com/' + imcode + '.gif';
+        }
+    }
+    //same
+    img.onload = function(){
+        if (whop == 0){
+            imcode = code()
+            document.getElementById("prog").innerHTML = imcode
+            img.src = 'http://i.imgur.com/' + imcode + '.gif';
+        }
+    }
+    
+}
+
+function ok(a){
+    
+    var head = "Random Imgur Image Retriever<br>";
+    var w = window,
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByTagName('body')[0],
+        x = w.innerWidth || e.clientWidth || g.clientWidth,
+        y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+   style = "#SexPalace{ display: block; margin: auto auto; max-width:" + .95*x + "; max-height:" + 1.5*y + "; }";
+    document.getElementById("wow").innerHTML = style;
+    if (img.naturalWidth > x || img.naturalHeight > 1.5*y){
+    siz = " (small)";}
+    document.getElementById("prog").innerHTML = head +"<a style='color:white' target = 'new' href= '" + "https://imgur.com/gallery/" + imcode + "'>"+imcode+"</a>"+ siz;
+}
+
+img.onclick = function() {
+    location.reload();
+    //window.location.href = img.src+"";
+};
+
+$( window ).resize(function() {
+    ok(3);
+});
+
+// ]]></script>
+
+<!--call the function in a div!! 
+-->
+<style id = "wow"></style>
+<div align="center" style="margin-top: 50px; color:white;" id = "prog">
+???
+</div>
+<script type="text/javascript">// <![CDATA[
+    imgcode = code();
+    document.body.style.backgroundColor = "#222222";
+    var url = 'dookie';
+    ok(code())
+    
+ranim(url);
+            
+// ]]></script>
+
+
+<div id = "hownice"></div>
+</body>
+</html>
+<!-- center the image -->
+
+
+
+

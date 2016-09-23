@@ -15,9 +15,8 @@
   <script>
   $( function() {
     $( "#myContent" ).accordion({
-		active: false,
-      	collapsible: true,
-		animate: false
+		animate: false,
+		decoration: false
     });
   } );
   </script>
@@ -34,7 +33,7 @@
 </style>
 
 <div style = "width:100%" id="mother">
-    <div class = "info" data-role="main" class="ui-content">
+    <div id = "info" data-role="main" class="ui-content">
         <h2 id="title">Willem Ytsma</h2>
         <p id = "email">
         Email: <a href="mailto:wytsma4000000@gmail.com?Subject=About%20your%20photos" target="_top" id = "wow">wytsma4000000@gmail.com</a>
@@ -43,8 +42,8 @@
         
         <div id = "myContent">
         	<h3 class="head"><a>Photo Albums</a></h3>
-            <div>
-            <br>
+            <div class="body">
+           
                 <a href = "https://goo.gl/photos/Cthp5yF2bGQvA4Uh9"  target="_blank" class = "albums" id="powel">Powel House Fringe (2016)</a><br>
                 <a href = "https://goo.gl/photos/fW8Ps2w44so48RmG9"  target="_blank" class = "albums" id="dance">Master Dance (2015)</a><br>
                 <a href = "https://goo.gl/photos/zsWDUJmK3HvDDecE9"  target="_blank" class = "albums" id="year">The year so far (2015)</a><br>
@@ -57,15 +56,14 @@
                 <a href = "https://goo.gl/photos/uhdfEPzn2HpdpURB8" target="_blank" class = "albums" id="high">Highschool Theater (2012)</a>
             </div>
             <h3 class="head">Videos</h3>
-            <div>
-            <br>
+            <div class="body">
+            
 				<a href="https://vimeo.com/181528368" target = "_blank" class = "albums" id="grum">Grumblefest Promo (2016)</a><br>
             	<a href = "https://www.youtube.com/watch?v=yfdBxtcK22w" target="_blank" class = "albums" id="chairz">"Chairz" (2015)</a><br>
-                <a href="https://www.youtube.com/watch?v=43VJjZWY3Vk" target = "_blank" class = "albums" id="plp">Matlab Video Effects (2015)</a><br>
-                
-                
+                <a href="https://www.youtube.com/watch?v=43VJjZWY3Vk" target = "_blank" class = "albums" id="plp">Matlab Video Effects (2015)</a><br>               
             </div>
         </div>
+        <div id="copyright"> { © Willem Ytsma 2016 } </div>
     </div>
    
         
@@ -77,20 +75,20 @@
 
 <script type="text/javascript">
 
-var powel = "http://i.imgur.com/BYk8Nhl.jpg";
-var dance = "http://i.imgur.com/xV7U0hG.jpg";
-var year = "http://i.imgur.com/shtflMa.jpg";
-var friends = "http://i.imgur.com/V9rnpMk.jpg";
-var sav = "http://i.imgur.com/PPNomTJ.jpg";
-var byz = "http://i.imgur.com/jPNkkmp.jpg";
-var music = "http://i.imgur.com/maenAIV.jpg";
-var sports = "http://i.imgur.com/6oFRu7S.jpg";
-var diy = "http://i.imgur.com/ByFTD8N.jpg";
-var high = "http://i.imgur.com/plGI4TC.jpg";
-var def = "http://i.imgur.com/2iBxxh6.jpg";
-var grum = "http://i.imgur.com/5vMnT7v.jpg";
-var chairz = "http://i.imgur.com/8JAc4Tc.jpg";
-var plp = "http://i.imgur.com/Jw3E3VC.jpg?1";
+var powel = "https://ytsmaw.github.io/powel.jpg";
+var dance = "https://ytsmaw.github.io/dance.jpg";
+var year = "https://ytsmaw.github.io/year.jpg";
+var friends = "https://ytsmaw.github.io/friends.jpg";
+var sav = "https://ytsmaw.github.io/sav.jpg";
+var byz = "https://ytsmaw.github.io/byz.jpg";
+var music = "https://ytsmaw.github.io/music.jpg";
+var sports = "https://ytsmaw.github.io/sports.jpg";
+var diy = "https://ytsmaw.github.io/diy.jpg";
+var high = "https://ytsmaw.github.io/high.jpg";
+var def = "/def.jpg";
+var grum = "https://ytsmaw.github.io/grum.jpg";
+var chairz = "https://ytsmaw.github.io/chairz.jpg";
+var plp = "https://ytsmaw.github.io/plp.jpg";
 
 <!--//--><![CDATA[//><!--
 	var images = new Array()
@@ -166,7 +164,7 @@ var plp = "http://i.imgur.com/Jw3E3VC.jpg?1";
 
 <style align = "left">
     
-    .info{
+    #info{
         font: 15px Trebuchet MS;
         color: #666;
         float: left;
@@ -190,6 +188,26 @@ var plp = "http://i.imgur.com/Jw3E3VC.jpg?1";
         background-size: cover;
         background-position: center center;
     }
+	
+		
+	.head{
+		font-size: 16px;
+		margin-bottom: 3px;
+		cursor: pointer;
+	}
+	
+	.body{
+		width: 60%;
+		margin-left: 25;
+	}
+
+    .albums{
+        
+        line-height: 150%;
+		padding-right: inherit;
+        padding-top:5px;
+		width: 100%;
+    }
     
     #infotext{
        font: 15px Trebuchet MS;
@@ -200,6 +218,10 @@ var plp = "http://i.imgur.com/Jw3E3VC.jpg?1";
         margin-top: 60px;
         
     }
+	
+	#myContent .ui-state-focus{
+    outline: none;
+}
     
     #email{
         line-height: 200%;
@@ -209,16 +231,14 @@ var plp = "http://i.imgur.com/Jw3E3VC.jpg?1";
         background: #000;
     }
 	
-	.head{
-		margin-bottom:-3px;
+	#copyright{
+		font-size: 15px;
+		padding-top: 30px;
+		position: absolute;
+    	bottom: 15px;
+		
 	}
 
-    .albums{
-        
-        line-height: 150%;
-
-        padding-top:5px;
-    }
     
 </style>
 
