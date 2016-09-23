@@ -6,6 +6,18 @@
 </head>
 
 <body>
-<iframe id="video" src="//www.youtube.com/embed/5iiPC-VGFLU?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+
+<iframe id="video" src="https://www.youtube.com/embed/yfdBxtcK22w?autoplay=1" frameborder="0" allowfullscreen></iframe>
+
+<script type="text/javascript">
+$(function(){
+  $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+
+  // If you want to keep full screen on window resize
+  $(window).resize(function(){
+    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+  });
+});
+</script>
 </body>
 </html>
