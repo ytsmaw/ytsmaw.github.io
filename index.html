@@ -144,12 +144,16 @@ var plp = "/plp.jpg";
         var h = window.innerHeight;
         var picW = Math.floor(4/3*h);
         var breakup = document.getElementById("breakup");
-        var setsize = ".container{width: "+picW+"px; margin=0;";
+        var setsize = ".container{margin=0;";
         //var infoW = w - picW- 20;
         if(w-picW < 350){
             var siz = Math.floor(w-370);
             breakup.innerHTML = setsize+ "width:" +siz+"px;}";
-        }else{
+        }else if (w-picW > 700){
+			var siz = Math.floor(w-700);
+            breakup.innerHTML = setsize+ "width:" +siz+"px;}";
+		}
+		else{
             breakup.innerHTML = setsize+ "width:"+picW+"px;}";
         }
     }    
@@ -187,6 +191,7 @@ var plp = "/plp.jpg";
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
+		position: fixed;
     }
 	
 		
@@ -233,10 +238,14 @@ var plp = "/plp.jpg";
 	
 	#copyright{
 		font-size: 15px;
-		padding-top: 30px;
+		margin-top: 30px;
+		padding-bottom: 15px;
+		padding-top: 5px;
 		position: absolute;
-    	bottom: 15px;
-		
+    	bottom: 0px;
+		position: fixed;
+		background: #fff;
+		width: inherit;
 	}
 
     
