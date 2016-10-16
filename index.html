@@ -190,7 +190,7 @@ var me = "/me.jpg";
 	.infoback{
 		width:370;
 		height: 100%;
-		background: #fff;
+		background: #fff000;
 		position: fixed;
 		top:0px;
 		left: 0px;
@@ -295,10 +295,14 @@ function randcol(a){
     function rl(){
 		var rc = randcol(4);
         document.getElementById("nice").innerHTML = " a:link{color:#666; text-decoration:none;} a:visited{color:#666;  text-decoration:none;} a:hover{color:" + rc +";} h3:hover{color:" + rc +";}";
+		//alert("nooo!");
     } 
     
     window.onblur = rl;
-	window.onfocus = preload(powel,dance,year,friends,sav,byz,music,sports,diy,high,grum,chairz,plp,me);
+	window.onfocus = function() {
+		preload(powel,dance,year,friends,sav,byz,music,sports,diy,high,grum,chairz,plp,me);
+		//alert("focused!"); 
+		};
 	var rc = randcol(4);
         
     document.getElementById("nice").innerHTML = " a:link{color:#666; text-decoration:none;} a:visited{color:#666;  text-decoration:none;} a:hover{color:" + rc +";} h3:hover{color:" + rc +";}";
@@ -313,7 +317,6 @@ function randcol(a){
 
   ga('create', 'UA-46338532-2', 'auto');
   ga('send', 'pageview');
-
 </script>
 
 </body>
