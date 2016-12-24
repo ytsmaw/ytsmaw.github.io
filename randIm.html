@@ -82,9 +82,12 @@ function ok(a){
         g = d.getElementsByTagName('body')[0],
         x = w.innerWidth || e.clientWidth || g.clientWidth,
         y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-   style = "#SexPalace{ display: block; margin: auto auto; max-width:" + .95*x + "; max-height:" + 1.5*y + "; }";
+		x = .95 * x;
+		y = 1.5 * y;
+
+   style = "#SexPalace{ display: block; margin: auto auto; max-width:" + x + "px; max-height:" + y + "px; }";
     document.getElementById("wow").innerHTML = style;
-    if (img.naturalWidth > x || img.naturalHeight > 1.5*y){
+    if (img.naturalWidth > x || img.naturalHeight > y){
     siz = " (small)";}
     document.getElementById("prog").innerHTML = head +"<a style='color:white' target = 'new' href= '" + "https://imgur.com/gallery/" + imcode + "'>"+imcode+"</a>"+ siz;
 }
