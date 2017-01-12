@@ -1,27 +1,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:og="http://ogp.me/ns#"
-xmlns:fb="http://www.facebook.com/2008/fbml">
-
 <head>
-    
-    <link rel="image_src" href="http://i.imgur.com/5U9zagO.jpg" / >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>Random Imgur Image Retriever</title>
+
+<link rel="image_src" href="http://i.imgur.com/5U9zagO.jpg" / >
     <meta property="og:image" content="http://i.imgur.com/5U9zagO.jpg" />
     <meta property="og:URL" content="anametobeproudof.tumblr.com" />
-    
-</head>
 
-<body>
-<script type="text/javascript">// <![CDATA[
-//url = "http//:i.imgur.com/13jgLAf.gif"
-    //document.write(" <img border='0' src='" + url + "/>");
-    var whop = 0;
-    var siz = "";
-    var img = new Image();
-    var imcode = 0;
-    function code(a){
-        //make a vector of all possible letters and numbers!
+<script type="text/javascript">
+var imgArray = [];
+var index = 0;
+var direction = 1;
+var imcode = "poop";
+var stats = false;
+var arrayln = 0;
+
+var myImg = function () {
+	huh: 0;
+};
+
+myImg.prototype  = {
+
+	//imgArray: [],
+	img: new Image(),
+     //"GD6yn",
+	
+
+	
+	randUrl: function () {
+		//make a vector of all possible letters and numbers!
         var ran = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', "a", "b", "c", "d", 'e', "f", "g", "h", "i", "j", "k", "l", "m", "n", 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K' ,'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'];
         //create a rancom combo of these letters and numbers!
         if (Math.round(Math.random()*10) < 9){
@@ -29,102 +38,212 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
         }else{
             var doce = ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ] + ran[ Math.floor(Math.random() * 62) ];
         }
-        
-        return doce;
-        
-    }
-    
-function ranim(url){
-    //create an image object
-    img.id = "SexPalace"
-    img.src = 'http://i.imgur.com/' + imcode + '.gif';
-    //show the image!
-    document.body.appendChild(img);
-    var img1 = document.querySelector('#SexPalace');
-    //check if a real image loaded
-    img1.addEventListener('load', function() {
-        // makde sure it isn't that does not exist image
-        if (img.naturalWidth != 161 && img.naturalHeight != 81 && imcode !=0){
-            whop = 1;
-                    
-            ok(4)
-            
-        }
-        // woo yey image loaded
-    });
-    //basically just creates an event & changes the souce if there is
-    //no real image on the end
-    img.onerror = function(){
-        //document.write(img.alt);
-        if (whop == 0 || img){
-            imcode = code()
-            document.getElementById("prog").innerHTML = imcode
-            img.src = 'http://i.imgur.com/' + imcode + '.gif';
-        }
-    }
-    //same
-    img.onload = function(){
-        if (whop == 0){
-            imcode = code()
-            document.getElementById("prog").innerHTML = imcode
-            img.src = 'http://i.imgur.com/' + imcode + '.gif';
-        }
-    }
-    
+		//alert(doce);
+        return doce;	
+	},
+	
+	
+	
+	create: function () {
+		//create an image object
+		this.img.id = "SexPalace";
+		var imarr = [];
+		//show the image!
+		document.body.appendChild(this.img);
+		
+		// make an easier varuiable!
+		var im = document.querySelector('#SexPalace');
+		var whop = 0;
+		
+		//check if a real image loaded
+		im.onload = function() {
+			// makde sure it isn't that does not exist image
+			if (im.naturalWidth != 161 && im.naturalHeight != 81){
+				whop = 1;
+				//alert("nice");
+				myImg.prototype.format(imcode);
+				var imc = [imcode];
+				if (direction == 1){ imarr = imarr.concat( imc ); }
+				else if (direction == -1){ imarr = imc.concat( imarr ); }
+				imgArray = imarr;
+				arrayln = imgArray.length;
+				if (stats){document.getElementById("arr").innerHTML = "array length: " + arrayln + " index: " + (index+1);}
+				//document.getElementById("arr").innerHTML = "array: " + imarr + "  index: " + index;
+				
+			} else {
+				imcode = myImg.prototype.randUrl();
+				document.getElementById("progress").innerHTML = imcode;
+				im.src ="http://i.imgur.com/" + imcode + ".gif";
+			}
+			// woo yey image loaded
+		}
+		
+		im.onerror = function () {
+			if (whop == 0){ // if the image isn't already loaded and there is an error, make a new image
+				imcode = myImg.prototype.randUrl();
+				document.getElementById("progress").innerHTML = imcode;
+				im.src ="http://i.imgur.com/" + imcode + ".gif";
+				//alert("error!");
+			}
+		}
+		
+		im.onclick = function () {
+			myImg.prototype.change(2);
+		}
+		
+		
+		//basically just creates an event & changes the souce if there is
+		//no real image on the end
+		
+		im.src = "http://i.imgur.com/" + imcode + ".gif";
+		myImg.prototype.format(imcode);
+		//index = 1;
+	},
+	
+	
+	
+	
+	format: function (imcode) {
+		var im = document.querySelector('#SexPalace');
+		var w = window,
+			d = document,
+			e = d.documentElement,
+			g = d.getElementsByTagName('body')[0],
+			x = w.innerWidth || e.clientWidth || g.clientWidth,
+			y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+			x = .95 * x;
+			y = 1.5 * y;
+	
+	   var style = "#SexPalace{ display: block; margin: auto auto; max-width:" + x + "px; max-height:" + y + "px; }";
+	   	var siz = "";
+		document.getElementById("wow").innerHTML = style;
+		
+		if (im.naturalWidth > x || im.naturalHeight > y){siz = " (small)";}
+		document.getElementById("progress").innerHTML = "<a style='color:white' target = 'new' href= '" + "https://imgur.com/gallery/" + imcode + "'>"+imcode+"</a>"+ siz;
+		
+		//alert("ImSetup Done!");
+		
+	},
+	
+	
+	
+	change: function (dir) {
+		
+		direction = dir;
+		var im = document.querySelector('#SexPalace');
+		var broken = "http://i.imgur.com/0.gif"
+		if (index == 0 && direction == -1){ 
+			imcode = myImg.prototype.randUrl();
+			document.getElementById("progress").innerHTML = imcode;
+			im.src ="http://i.imgur.com/" + imcode + ".gif";
+			}
+		else if (index >= imgArray.length-1 && direction == 1) {
+			imcode = myImg.prototype.randUrl();
+			document.getElementById("progress").innerHTML = imcode;
+			im.src ="http://i.imgur.com/" + imcode + ".gif";
+			index = index + 1;
+			}
+		else if (direction == 2) { 
+			imcode = myImg.prototype.randUrl();
+			document.getElementById("progress").innerHTML = imcode;
+			im.src ="http://i.imgur.com/" + imcode + ".gif";
+			index = imgArray.length;
+		}
+		else { 
+			index = index + direction;
+			im.src = "http://i.imgur.com/" + imgArray[ index ] + ".gif"; 
+			direction = 0;
+			}
+		//alert("Array Len: "+ imgArray.length + "  Index: " + index);
+		
+			
+	},
+	
+	
+	array: function (arr) {
+		var array;
+		if (arr == "load"){ return array; }
+		else { array = arr; }
+	},
+	
+	
+	disp: function(){
+		document.write("wow classes sure do rule! ");
+	}
 }
 
-function ok(a){
-    
-    var head = "Random Imgur Image Retriever<br>";
-    var w = window,
-        d = document,
-        e = d.documentElement,
-        g = d.getElementsByTagName('body')[0],
-        x = w.innerWidth || e.clientWidth || g.clientWidth,
-        y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-		x = .95 * x;
-		y = 1.5 * y;
+//window.onload() = poop.disp();
+</script>
 
-   style = "#SexPalace{ display: block; margin: auto auto; max-width:" + x + "px; max-height:" + y + "px; }";
-    document.getElementById("wow").innerHTML = style;
-    if (img.naturalWidth > x || img.naturalHeight > y){
-    siz = " (small)";}
-    document.getElementById("prog").innerHTML = head +"<a style='color:white' target = 'new' href= '" + "https://imgur.com/gallery/" + imcode + "'>"+imcode+"</a>"+ siz;
-}
+</head>
 
-img.onclick = function() {
-    location.reload();
-    //window.location.href = img.src+"";
-};
+<body>
+<style id="wow"> </style>
+<p id = "head"> Random Imgur Image Retriever</p>
+<div id="progress"> hot sex </div>
 
-$( window ).resize(function() {
-    ok(3);
-});
+<style>
+	body{
+		background: #666;
+		align: center;
+	}
+	#head{ color:white;
+		text-align: center;
+		margin-bottom: -2px;
+	}
+	#progress{ color: white;
+		text-align: center;
+		margin-bottom: 10px
+	}
+	#arr{ margin: 0 auto;
+		color: white;
+		text-align: center;
+		width: 20%;
+	}
+	
+</style>
 
-// ]]></script>
+<script type="text/javascript">
+	var Img = new myImg();
 
-<!--call the function in a div!! 
--->
-<style id = "wow"></style>
-<div align="center" style="margin-top: 50px; color:white;" id = "prog">
-???
-</div>
-<script type="text/javascript">// <![CDATA[
-    imgcode = code();
-    document.body.style.backgroundColor = "#222222";
-    var url = 'dookie';
-    ok(code())
-    
-ranim(url);
-            
-// ]]></script>
+	Img.create();
+	
+	// use the left and right arrows if the image or document has focus
+	$(Img.img).keydown(function(e){
+		
+		if (e.keyCode == 39) {
+			//alert("right arrow!");
+			Img.change(1);
+		}
+		if (e.keyCode == 37) {
+			//alert("left Arrow!");
+			Img.change(-1);
+		}
+	});
+	
+	$(document).keydown(function(e){
+		
+		 switch(e.keyCode) {
+			case 39:
+				Img.change(1); // right arrow
+				break;
+			case 37:
+				Img.change(-1); // left arrow
+				break;
+			case 32:
+				stats = !stats;
+				break;
+				
+		}
+	if (stats){ 	
+	document.getElementById("arr").innerHTML = "array length: " + arrayln + " index: " + (index+1);}
+	else{
+		document.getElementById("arr").innerHTML = ""
+		}
+		
+	});
+</script>
+<div id = "arr"></div>
 
-
-<div id = "hownice"></div>
 </body>
 </html>
-<!-- center the image -->
-
-
-
-
