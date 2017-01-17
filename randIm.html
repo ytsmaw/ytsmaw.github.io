@@ -61,12 +61,17 @@ myImg.prototype  = {
 			if (im.naturalWidth != 161 && im.naturalHeight != 81){
 				whop = 1;
 				//alert("nice");
-				myImg.prototype.format(imcode);
+				//myImg.prototype.format(imcode);
 				var imc = [imcode];
 				if (direction == 1){ imarr = imarr.concat( imc ); }
 				else if (direction == -1){ imarr = imc.concat( imarr ); }
 				imgArray = imarr;
 				arrayln = imgArray.length;
+				// this if is so that prog foolows the correct link
+				if(index == arrayln-1 || index == 1){
+					myImg.prototype.format(imcode);
+					
+				}
 				if (stats){document.getElementById("arr").innerHTML = "array length: " + arrayln + " index: " + (index+1);}
 				//document.getElementById("arr").innerHTML = "array: " + imarr + "  index: " + index;
 				
@@ -103,7 +108,7 @@ myImg.prototype  = {
 	
 	
 	
-	format: function (imcode) {
+	format: function (code) {
 		var im = document.querySelector('#SexPalace');
 		var w = window,
 			d = document,
@@ -119,7 +124,7 @@ myImg.prototype  = {
 		document.getElementById("wow").innerHTML = style;
 		
 		if (im.naturalWidth > x || im.naturalHeight > y){siz = " (small)";}
-		document.getElementById("progress").innerHTML = "<a style='color:#1BB76E' target = 'new' href= '" + "https://imgur.com/gallery/" + imcode + "'>"+imcode+"</a>"+ siz;
+		document.getElementById("progress").innerHTML = "<a style='color:#1BB76E' target = 'new' href= '" + "https://imgur.com/gallery/" + code + "'>"+code+"</a>"+ siz;
 		
 		//alert("ImSetup Done!");
 		
@@ -152,6 +157,8 @@ myImg.prototype  = {
 		else { 
 			index = index + direction;
 			im.src = "http://i.imgur.com/" + imgArray[ index ] + ".gif"; 
+			myImg.prototype.format(imgArray[index]);
+			
 			direction = 0;
 			}
 		//alert("Array Len: "+ imgArray.length + "  Index: " + index);
