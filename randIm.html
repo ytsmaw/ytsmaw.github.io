@@ -63,7 +63,7 @@ myImg.prototype  = {
 				//alert("nice");
 				//myImg.prototype.format(imcode);
 				var imc = [imcode];
-				if (direction == 1){ imarr = imarr.concat( imc ); }
+				if (direction == 1 || direction == 2){ imarr = imarr.concat( imc ); }
 				else if (direction == -1){ imarr = imc.concat( imarr ); }
 				imgArray = imarr;
 				arrayln = imgArray.length;
