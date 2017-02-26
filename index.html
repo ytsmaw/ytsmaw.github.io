@@ -47,17 +47,13 @@
     <div id = "myContent">
         <h3 class="head"><a>Photo Albums</a></h3>
         <div class="body">
-       
+       		<a href = "https://goo.gl/photos/TvnFrEhciwRTjoZ28"  target="_blank" class = "albums" id="spgt">Music (2017)</a><br>
             <a href = "https://goo.gl/photos/Cthp5yF2bGQvA4Uh9"  target="_blank" class = "albums" id="powel">Powel House Fringe (2016)</a><br>
             <a href = "https://goo.gl/photos/fW8Ps2w44so48RmG9"  target="_blank" class = "albums" id="dance">Master Dance (2015)</a><br>
             <a href = "https://goo.gl/photos/zsWDUJmK3HvDDecE9"  target="_blank" class = "albums" id="year">The year so far (2015)</a><br>
-            <a href = "https://goo.gl/photos/qx9UsjWWZYDEhqXdA"  target="_blank" class = "albums" id="friends">Friends</a><br>
-            <a href = "https://goo.gl/photos/hVXzReTkCw8XNAu7A"  target="_blank" class = "albums" id="sav">Savannah (2015)</a><br>
             <a href = "https://goo.gl/photos/64oKXu63ZqcSfMmm7"  target="_blank" class = "albums" id="byz">Byzantine Empire (2014)</a><br>
-            <a href = "https://goo.gl/photos/wydQCVTAnAfAttyZ6"  target="_blank" class = "albums" id="music">Music (2014)</a><br>
             <a href = "https://goo.gl/photos/GhjLxdnB3JhhDmGa8" target="_blank" class = "albums" id="sports">Sports (2013)</a><br>
             <a href = "https://goo.gl/photos/rftCzJmML7B17XzP9" target="_blank"class = "albums" id="diy">DIY Theater (2013)</a></br>
-            <a href = "https://goo.gl/photos/uhdfEPzn2HpdpURB8" target="_blank" class = "albums" id="high">Highschool Theater (2012)</a>
         </div>
         <h3 class="head">Videos</h3>
         <div class="body">
@@ -96,6 +92,7 @@ var chairz = "/chairz.jpg";
 var plp = "/plp.jpg";
 var me = "/me.jpg";
 var wcwillem = "/wcwillem.jpg";
+var spgt = "/spgt.jpg";
 
 <!--//--><![CDATA[//><!--
 	var images = new Array()
@@ -106,7 +103,7 @@ var wcwillem = "/wcwillem.jpg";
 		}
 	}
 	preload(
-		powel,dance,year,friends,sav,byz,music,sports,diy,high,grum,chairz,plp,me,wcwillem
+		powel,dance,year,byz,sports,diy,grum,chairz,plp,me,wcwillem,spgt
 	);
 //--><!]]>
 
@@ -136,6 +133,7 @@ var wcwillem = "/wcwillem.jpg";
 		$("#plp").hover(function() {changepic(plp);},function() {changepic(def);});
 		$("#title").hover(function() {changepic(me);},function() {changepic(def);});
 		$("#wcwillem").hover(function() {changepic(wcwillem);},function() {changepic(def);});
+		$("#spgt").hover(function() {changepic(spgt);},function() {changepic(def);});
 
 </script>
 
