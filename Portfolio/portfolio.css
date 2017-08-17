@@ -15,7 +15,7 @@ h1 {
 
 h2 {
     color: #ff9955;
-    font: 25px verdana;
+    font: 40px verdana;
     font-style: bold;
 }
 
@@ -31,18 +31,38 @@ p {
     font: 15px verdana;
 }
 
-a:hover{cursor: pointer}
+br{
+    line-height: 1%;
+}
 
-a:link{color:#ff9955;}
+a:hover{
+    cursor: pointer;
+}
 
-a:visited{color:#eee;} 
+a:link{
+    color:#ff9955;
+    text-decoration: none;
+}
+
+a:link:hover{
+    color: #eee;
+}
+
+a:visited{color:#ff9955;}
+
+a:visited:hover{color:#eee;}
 
 
-.content{
+.backdrop{
     width:100%;
     min-height:100%;
     position: static;
     top: 0px;
+    background: #eee;
+}
+#content{
+    background: #888;
+    padding: 20px;
 }
 
 .menu{
@@ -57,9 +77,24 @@ a:visited{color:#eee;}
     border-left: 5px solid #555;
 }
 
+#menutop{
+    min-height:80px;
+    margin-left: 10px;
+    margin-top: 20px;
+    font: 30px verdana;
+    font-style: bold;
+    vertical-align: center;
+    /* font-size: 1.5vw; */
+}
+
 .menucontent{
     margin:10px;
-    margin-top: 140px;
+    margin-top: 30px;
+}
+
+.menuHeader{
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
 #landingc {
@@ -91,4 +126,9 @@ a:visited{color:#eee;}
     font-size: 5vw;
 }
 
-
+#footer {
+    position:absolute;
+    bottom: 13px;
+    left: 0px;
+    font-size: 11px;
+}

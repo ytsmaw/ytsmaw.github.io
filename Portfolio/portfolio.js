@@ -11,13 +11,18 @@ $( document ).ready( function() {
     
     // menu accordion function
     $( "#landingcontent" ).accordion({
-		animate: false,
+		animate: true,
 		decoration: false,
 		collapsible: true,
 		heightStyle: "collapsible",
         active: false
         
     });
+    
+    //alert(document.title);
+    if(document.title != "Willem Ytsma Portfolio Home"){
+        $( "#landingcontent" ).accordion( "option", "active", 1 );
+    }
     
     // stupid who cares
     //$("#jstest").click(function () {document.getElementById("jstest").innerHTML = "ah no i've been clicked"; });
