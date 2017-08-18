@@ -52,7 +52,7 @@ $( document ).ready( function() {
     
     // things that happen only on project pages
     
-    if(document.title != "Willem Ytsma Portfolio Home"){
+    if(document.title !== "Willem Ytsma Portfolio Home"){
         $( "#landingcontent" ).accordion( "option", "active", 0 );
         ar = screen.width / screen.height;
         
@@ -114,10 +114,10 @@ $( document ).ready( function() {
     
     
     //resizing the window
-    $( window ).resize(projectsize(true));
-    //window.onresize = alert("wow!");
+    window.onresize = function() { projectsize(true); }
         
   } );
 
+//$( window ).resize(projectsize(true));
 
   
