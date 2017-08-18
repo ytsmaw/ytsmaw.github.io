@@ -77,6 +77,10 @@ a:visited:hover{color:#eee;}
     border-left: 5px solid #555;
 }
 
+#menu-top-content{
+    padding-bottom: 50px;
+}
+
 #menutop{
     min-height: 150px;
     margin-left: 10px;
@@ -89,7 +93,6 @@ a:visited:hover{color:#eee;}
 
 #menucontent{
     margin:10px;
-    margin-top: 30px;
 }
 
 .menuHeader{
@@ -134,6 +137,13 @@ a:visited:hover{color:#eee;}
     bottom: 13px;
     left: 0px;
     font-size: 11px;
+}
+
+#status {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background: black;
 }
 
 

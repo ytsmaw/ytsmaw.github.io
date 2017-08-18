@@ -5,6 +5,10 @@
 /*global $, jQuery, alert*/
 /*global alert: false, console: false, jQuery: false */
 
+function stats(msg){
+    document.getElementById('status').innerHTML = msg;
+}
+
 function projectsize(doresize){
 
     // getting the projects content the right size
@@ -40,10 +44,39 @@ function projectsize(doresize){
     //alert("window width: "+w+"<br>title width: "+document.getElementById('projects-title').style.width +"<br>assigned w: " + (contentw - 30) + "<br>scroll-width: " +$('#projects-title')[0].scrollWidth);
 }
 
+function menuscroll(){
+    var h = window.innerHeight;
+    var scroll = $( window ).scrollTop() + h;
+    var menuc =document.getElementById('menu-top-content');
+    var menubottom = menuc.offsetHeight;
+    //alert($( window ).scrollTop());
+    stats("page height: " + h + " scroll bottom: "+ scroll +" menu bottom: " + menubottom);
+    if(scroll > menubottom){
+        menuc.style.position = 'fixed';
+        if(menubottom < h){
+            menuc.style.top = 0;
+        }else{
+            menuc.style.top = h-menubottom;
+        }
+        
+        //stats('fixed');
+    }else{
+        menuc.style.position = 'absolute';
+        menuc.style.top = 0;
+        //stats('absolute');
+    }
+    
+}
+
+
+
+
+// DO ALL THIS WHEN THE PAGE LOADS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 $( document ).ready( function() {
     
     var resize = true;
-    
+    //stats('wowowowo');
     // menu accordion function
     
     $( "#menucontent" ).accordion({
@@ -73,7 +106,12 @@ $( document ).ready( function() {
             }
             resize = false;
         }
-            projectsize(resize);
+        
+        // make sure the content is the right size
+        projectsize(resize);
+        
+        // menu scrolling function
+        $( window ).scroll(function(){menuscroll();})
     }else{
         $( '#ui-id-1' ).click(function() {
             if(isExpanded == false){
@@ -128,6 +166,9 @@ $( document ).ready( function() {
     });
     */
         
+    
+    //un-expand the menu when thing is clicked
+    
     $(".menuHeader").click(function(){
         if(isExpanded == true){
             var w = $( document ).width() * 0.2;
@@ -142,9 +183,8 @@ $( document ).ready( function() {
             }, 500);
             isExpanded = false;
         } 
-        
+        document.getElementById(menu).style.position = 'absolute';
     });
-    
     
     //resizing the window
     window.onresize = function() { projectsize(true); }
