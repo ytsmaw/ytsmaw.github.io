@@ -23,12 +23,19 @@ function projectsize(doresize){
     // getting the projects title the right size
     //Text has over-flowed
     if ($('#projects-title')[0].scrollHeight >  50 ){
-        document.getElementById('projects-title').style.top = '34px';
+        document.getElementById('projects-title').style.top = '36px';
         //document.getElementById('projects-title').style.fontSize = '35px';
     }else{
        document.getElementById('projects-title').style.top = '80px';
         //document.getElementById('projects-title').style.fontSize = '40px';
     }
+    
+    // make sure the title fits inside of the header
+    var topheight = 150;
+    if($('#projects-title')[0].scrollHeight>89){
+        topheight = 36 + $('#projects-title')[0].scrollHeight + 38;
+    }
+    document.getElementById("content-top").style.height = topheight;
     
     //alert("window width: "+w+"<br>title width: "+document.getElementById('projects-title').style.width +"<br>assigned w: " + (contentw - 30) + "<br>scroll-width: " +$('#projects-title')[0].scrollWidth);
 }
@@ -118,6 +125,4 @@ $( document ).ready( function() {
         
   } );
 
-//$( window ).resize(projectsize(true));
-
-  
+ 
