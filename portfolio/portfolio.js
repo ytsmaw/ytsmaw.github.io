@@ -11,7 +11,7 @@ function projectsize(){
     var w = $( document ).width();
         var contentw;
         if(w*0.2 > 300){
-            contentw = w*0.8-5;
+            contentw = w*0.8-0;
         }else{
             contentw = w-310;
         }
@@ -97,7 +97,8 @@ $( document ).ready( function() {
         } 
     });
     
-    $( window ).resize(projectsize);
+    //$( window ).resize(projectsize);
+    window.onresize = projectsize;
         
   } );
 
