@@ -104,16 +104,6 @@ function menuscroll(){
     
 }
 
-function footerpos(){
-    if(document.getElementById("menu").scrollHeight>$(window).height()){
-        document.getElementById("footer").style.position = "static";
-    }else{
-        document.getElementById("footer").style.position = "absolute";
-    }
-    alert("footerpos");
-    
-}
-
 
 // DO ALL THIS WHEN THE PAGE LOADS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /*
