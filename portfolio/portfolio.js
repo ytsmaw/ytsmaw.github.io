@@ -5,9 +5,42 @@
 /*global $, jQuery, alert*/
 /*global alert: false, console: false, jQuery: false */
 
-function stats(msg){
-    document.getElementById('status').innerHTML = msg;
+function stats(msg="wowowow"){
+    if(document.getElementById('status')){
+        document.getElementById('status').innerHTML = msg;
+    }
+    else{
+        //alert(msg);
+    }
 }
+
+function makemypage(){
+    
+    $( function(){
+        $( "#page" ).load("Projects-template.html");
+    });
+    
+    //get all the important stuff from the page
+    var pagetitle = document.getElementById("title").innerHTML;
+    var pageheadimg = document.getElementById("headimage").innerHTML;
+    var pagecontent = document.getElementById("pcontent").innerHTML;
+    //delete it and start over!
+    
+    //put it back in the page!
+    document.getElementById("projects-title").innerHTML = pagetitle;
+    document.getElementById("content-story").innerHTML = pagecontent;
+    document.getElementById("content-top").style.backgroundImage = "url("+pageheadimg+")";
+    
+}
+
+function insertcontent(pagetitle,pageheadimg,pagecontent){
+    document.getElementById("projects-title").innerHTML = pagetitle;
+    document.getElementById("content-story").innerHTML = pagecontent;
+    document.getElementById("content-top").style.backgroundImage = "url("+pageheadimg+")";
+}
+
+
+// resize the content section so it doesn't overlap with the menu
 
 function projectsize(doresize){
 
@@ -44,6 +77,9 @@ function projectsize(doresize){
     //alert("window width: "+w+"<br>title width: "+document.getElementById('projects-title').style.width +"<br>assigned w: " + (contentw - 30) + "<br>scroll-width: " +$('#projects-title')[0].scrollWidth);
 }
 
+
+// only can scroll all the way to bottom of menu and then it becomes fixed
+
 function menuscroll(){
     var h = window.innerHeight;
     var scroll = $( window ).scrollTop() + h;
@@ -68,12 +104,38 @@ function menuscroll(){
     
 }
 
-
+function footerpos(){
+    if(document.getElementById("menu").scrollHeight>$(window).height()){
+        document.getElementById("footer").style.position = "static";
+    }else{
+        document.getElementById("footer").style.position = "absolute";
+    }
+    alert("footerpos");
+    
+}
 
 
 // DO ALL THIS WHEN THE PAGE LOADS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+/*
+$( function(){
+    //get all the important stuff from the page
+    var pagetitle = document.getElementById("title").innerHTML;
+    var pageheadimg = document.getElementById("headimage").innerHTML;
+    var pagecontent = document.getElementById("pcontent").innerHTML;
+    
+    $( "#page" ).load("Projects-template.html");
+    
+    //put it back in the page!
+    insertcontent(pagetitle,pageheadimg,pagecontent);
+});
+*/
 $( document ).ready( function() {
+    
+    /*
+    if(document.title !== "Willem Ytsma Portfolio Home"){
+        makemypage();
+    }
+    */
     
     var resize = true;
     //stats('wowowowo');
@@ -92,6 +154,8 @@ $( document ).ready( function() {
     // things that happen only on project pages
     
     if(document.title !== "Willem Ytsma Portfolio Home"){
+        
+        // make sure that 'projects' is open on the accordian
         $( "#landingcontent" ).accordion( "option", "active", 0 );
         ar = screen.width / screen.height;
         
@@ -110,10 +174,30 @@ $( document ).ready( function() {
         // make sure the content is the right size
         projectsize(resize);
         
-        // menu scrolling function
-        $( window ).scroll(function(){menuscroll();})
-    }else{
-        $( '#ui-id-1' ).click(function() {
+        // menu scroll things
+        setInterval(menuscroll, 250);
+        
+    }else{        
+        var h3 = document.getElementsByTagName('h3');
+        for(i=1; i<h3.length; i++){
+            $(h3[i]).click(function(){
+                if(isExpanded == true){
+                    var w = $( document ).width() * 0.2;
+                    var myw;
+                    if(w > 300){
+                        myw = w+"px";
+                    }else{
+                        myw = 300+"px";
+                    }
+                    $("#menu").animate({
+                        'width' : myw
+                    }, 500);
+                    isExpanded = false;
+                } 
+                document.getElementById('menu').style.position = 'absolute';
+            });
+        }
+            $(h3[0]).click(function() {
             if(isExpanded == false){
                 $("#menu").animate({
                     'width' : '600px'
@@ -183,11 +267,14 @@ $( document ).ready( function() {
             }, 500);
             isExpanded = false;
         } 
-        document.getElementById(menu).style.position = 'absolute';
+        document.getElementById('menu').style.position = 'absolute';
     });
     
     //resizing the window
-    window.onresize = function() { projectsize(true); }
+    window.onresize = function() { projectsize(true);}
+    
+    // menu scrolling function
+    $( document ).scroll(function(){menuscroll();})
         
   } );
 
