@@ -220,7 +220,7 @@ a:visited:hover{color:#eee;}
     line-height: 20px;
 }
 
-.content-image{
+.content-media{
     display: block;
     max-width:80%;
     min-width: 300px;
@@ -234,8 +234,26 @@ a:visited:hover{color:#eee;}
     margin-top: 17px;
 }
 
-.content-image img{
+.content-media img{
     display:block;
     max-width: 100%;
+    margin-bottom: 7px;
+}
+
+.video-wrapper iframe{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.video-wrapper{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    background: black;
+    display: block;
     margin-bottom: 7px;
 }

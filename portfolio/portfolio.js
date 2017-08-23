@@ -5,6 +5,11 @@
 /*global $, jQuery, alert*/
 /*global alert: false, console: false, jQuery: false */
 
+var slop = "nice";
+var pagetitle = "page title";
+var pageheadimg = "cyber.jpg";
+var pagecontent = "con tent";
+
 function stats(msg="wowowow"){
     if(document.getElementById('status')){
         document.getElementById('status').innerHTML = msg;
@@ -15,25 +20,23 @@ function stats(msg="wowowow"){
 }
 
 function makemypage(){
-    
-    $( function(){
-        $( "#page" ).load("Projects-template.html");
-    });
-    
-    //get all the important stuff from the page
-    var pagetitle = document.getElementById("title").innerHTML;
-    var pageheadimg = document.getElementById("headimage").innerHTML;
-    var pagecontent = document.getElementById("pcontent").innerHTML;
+    //alert(pagetitle);
+    //get the important stuff from earlier
+    pagetitle = document.getElementById("title").innerHTML;
+    pageheadimg = document.getElementById("headimage").innerHTML;
+    pagecontent = document.getElementById("pcontent").innerHTML;
     //delete it and start over!
+    stats(pagetitle + " " + pageheadimg + " " + pagecontent);
+    $( "#page" ).load("Projects-template.html");
+    //stats("loaded!");
     
-    //put it back in the page!
-    document.getElementById("projects-title").innerHTML = pagetitle;
-    document.getElementById("content-story").innerHTML = pagecontent;
-    document.getElementById("content-top").style.backgroundImage = "url("+pageheadimg+")";
+    setTimeout(insertcontent,0);
+
+    stats("all done!");
     
 }
 
-function insertcontent(pagetitle,pageheadimg,pagecontent){
+function insertcontent(){
     document.getElementById("projects-title").innerHTML = pagetitle;
     document.getElementById("content-story").innerHTML = pagecontent;
     document.getElementById("content-top").style.backgroundImage = "url("+pageheadimg+")";
@@ -121,32 +124,29 @@ $( function(){
 */
 $( document ).ready( function() {
     
-    /*
-    if(document.title !== "Willem Ytsma Portfolio Home"){
+    if(document.getElementById("page")){
+        stats("page id!!");
         makemypage();
+        //stats("done!");
     }
-    */
     
-    var resize = true;
-    //stats('wowowowo');
     // menu accordion function
-    
     $( "#menucontent" ).accordion({
-		animate: true,
-		decoration: false,
-		collapsible: true,
-		heightStyle: "collapsible",
-        active: false
-        
+        animate: true,
+        decoration: false,
+        collapsible: true,
+        heightStyle: "collapsible",
+        active: 0
+
     });
     
+    var resize = true;
+    //stats('wowowowo');    
     
     // things that happen only on project pages
     
     if(document.title !== "Willem Ytsma Portfolio Home"){
         
-        // make sure that 'projects' is open on the accordian
-        $( "#landingcontent" ).accordion( "option", "active", 0 );
         ar = screen.width / screen.height;
         
         //what if it's on a phone?
@@ -156,7 +156,7 @@ $( document ).ready( function() {
             document.getElementById("menu").style.width = 0;
             var list = document.getElementsByTagName('p');
             for(i=0; 1<list.length; i++){
-                list[i].style.fontSize = 20;
+                list[i].style.fontSize = 26;
             }
             resize = false;
         }
@@ -167,7 +167,21 @@ $( document ).ready( function() {
         // menu scroll things
         setInterval(menuscroll, 250);
         
-    }else{        
+        // make sure that 'projects' is open on the accordian
+        $( "#landingcontent" ).accordion( "option", "active", 0 );
+        
+    }else{  
+        
+        // menu accordion function
+        $( "#menucontent" ).accordion({
+            animate: true,
+            decoration: false,
+            collapsible: true,
+            heightStyle: "collapsible",
+            active: false
+
+        });
+        
         var h3 = document.getElementsByTagName('h3');
         for(i=1; i<h3.length; i++){
             $(h3[i]).click(function(){
@@ -211,7 +225,7 @@ $( document ).ready( function() {
     }
     
     // stupid who cares
-    //$("#jstest").click(function () {document.getElementById("jstest").innerHTML = "ah no i've been clicked"; });
+    $("#jstest").click(function () {document.getElementById("jstest").innerHTML = "ah no i've been clicked"; });
     
     var isExpanded = false; 
     
