@@ -15,12 +15,18 @@
                     <div id="projects-title">Engineering Projects: Intuitive Synthesiizer Interface</div>
                 </div>
                 <div id="content-story">
+                    <div class="line"></div>
                     <h3>The Problem</h3>
-                    <p>Since the 1960s, artists have been using analog synthesizers to produce music. However, synthesizers have always had complex and intimidating interfaces, making them difficult to use. This problem was attempted to be solved with the digital synthesizers of the 80s, using preprogrammed patches based off of samples. These synthesizers were popular for years, but have become unpopular due to their limited capability for experimentation with new sounds. Because of this, many artists are turning back to analog synthesizers but are coming across the same problems they had when they started. Mainly, the inability to save signal paths (patches) and non-intuitive interfaces. Different modules and filters are patched together using audio cables to create a final sound - a process that can take hours or even days. Once the artist decides to move on from a patch, it can become impossible to return to the original sound.
+                    <p>Since the 1960s, artists have been using analog synthesizers to produce music. However, synthesizers have always had complex and intimidating interfaces, making them difficult to use. The team spent several weeks interviewing composers and musicians who work heavily with synthesizers to come up with our concept. We considered developing new synthesizer modules, motion-based interfaces, and methods to connect synthesizers to auxilary lightshows. In the end, we found that the most persistant problem for synth users was the inability to recall signal paths that they have made. Different modules and filters are patched together using audio cables to create a final sound - a process that can take hours or even days. Once the artist decides to move on from a patch, it can become impossible to return to the original sound.
                     </p>
                     <h3>Our Solution</h3>
-                    <p>The team spent several weeks interviewing composers and musicians who work heavily with synthesizers to come up with our concept. We considered developing new synthesizer modules, motion-based interfaces, and methods to connect synthesizers to auxilary lightshows. In the end, we found that the most persistant problem for synth users was the inability to recall signal paths that they have made. 
+                    <p> Our solution was to create a new synthesizer interface that stays true to the aesthetic style and analog nature of the original synthesizers from the 1960s and '70s. Once an artist has reached a patch that they like using the synthesizer, they can press a button to save it in their patch bank to return to it later. The knob positions are saved using encoders attached to the knobs and the switch states and signal path are saved by passing a high-voltage pulse through the synthesizer. The synthesizer can also be controlled through an Android application, which displays a visual representation of the final waveform and communicates with the synthesizer through bluetooth. We have filed a provisional patent application for our invention, on which I am listed as an inventor.
                     </p>
+                    <h3>My Role</h3>
+                    <p>My role in the project was to build the android application to communicate with the synthesizer. I made the application exclusively in Android Studio, using the Java language for functionality and XML for the design of the interface. I was not familiar with Java when I started the app, and learned the language along the way with help from Stackoverflow and a short lynda course on object-oriented programming. I coded everything in the app, except for the bluetooth hardware code and the transfer function equation in the filter class. The application lets users create and manipulate the frequency and amplitude of sawtooth, triangle, and square waves; mix two waves together through superposition; apply a low-pass filter and increase the resonance of the signal; save patches in a bank; and communicate with the synthesizer over bluetooth to hear the result in real-time. The application does this through an interface that allows the user to modify a graphical representation of the wave on a touchscreen.</p>
+                    
+                    <div class="line"></div>
+                    
                     <div class="content-media">
                         <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/DN6mFxRcNBA" frameborder="0" allowfullscreen></iframe></div>
                         Short video of me demonstrating the recall function of our first prototype.
@@ -53,7 +59,5 @@
             </div>
             <p id="footer"> [ Site © Willem Ytsma 2017 ]</p>
         </div>
-        
-        <p id="status">stats</p>
          </body>
 </html>
