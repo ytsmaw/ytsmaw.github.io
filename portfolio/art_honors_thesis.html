@@ -17,7 +17,15 @@
                 <div id="content-story">
                     <div class="line"></div>
                     <h3>The Problem</h3>
-                    <p>For my honors art thesis my senior year, I was interested in data and how it could be corrupted. I wanted to see how picture data could be corrupted by audio noise, but in order to do that I needed to figure out a way to encode picture information in an audio file. </p>
+                    <p>
+                        For my honors art thesis my senior year, I was interested in data and how it could be corrupted. I wanted to see how picture data could be corrupted by audio noise, but in order to do that I needed to figure out a way to encode picture information in an audio file. 
+                    </p>
+                    <h3>My Solution</h3>
+                    <p>
+                        I decided to code my project in MATLAB, because it was the language I was most familar with at the time, as I had been using for in my engineering classes. I encoded the picture data with an AM signal and used a peak finder to read the data back. I encoded the information by taking red, green, and blue values of each row of pixels in the image to create a long vector which I then re-stacked into the image. After I had that working, I experimented a little with running short videos through the process and seeing what would happen if I recorded an image in an echoey room.
+                        <br><br>
+                        But I wasn't happy with the still images. They just weren't getting across what I wanted. So I decided to make the process happen in real time, or as close as I could get to it. This was a difficult task. I experimented with different timers and the MATLAB timerecorder object but I couldn't get each small chunk of the image to perfectly overlap without losing audio data in between. I had to go into the audiorecorder object, rip out its most basic components, and use it with my own object that assembled the image. The data was then assembled into an image that was updated as quickly as the peakfinder could work- twice a second.
+                    </p>
                     
                     <div class="line"></div>
                     
