@@ -124,21 +124,14 @@ $( function(){
 */
 $( document ).ready( function() {
     
+    //fill in projects links
+    $( "#projects" ).load("projects-links.html");
+    
     if(document.getElementById("page")){
         stats("page id!!");
         makemypage();
         //stats("done!");
     }
-    
-    // menu accordion function
-    $( "#menucontent" ).accordion({
-        animate: true,
-        decoration: false,
-        collapsible: true,
-        heightStyle: "collapsible",
-        active: 0
-
-    });
     
     var resize = true;
     //stats('wowowowo');    
@@ -146,6 +139,16 @@ $( document ).ready( function() {
     // things that happen only on project pages
     
     if(document.title !== "Willem Ytsma Portfolio Home"){
+        
+        // menu accordion function
+        $( "#menucontent" ).accordion({
+            animate: true,
+            decoration: false,
+            collapsible: true,
+            heightStyle: "collapsible",
+            active: 0
+
+        });
         
         ar = screen.width / screen.height;
         
