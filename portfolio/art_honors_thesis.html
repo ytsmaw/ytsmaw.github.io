@@ -5,6 +5,7 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="portfolio.js"></script>
         
+        <link rel="icon" href="AVATAR.png">
         <title>Signal Processing With Matlab</title>
     </head>
      
@@ -12,6 +13,7 @@
         <div class="backdrop" id="vinylc">
             <div id="content">
                 <div id="content-top" style="background-image: url('cyber.jpg')">
+                    <img src="gradient.png">
                     <div id="projects-title">Engineering Projects: Signal Processing With Matlab</div>
                 </div>
                 <div id="content-story">
@@ -23,7 +25,7 @@
                     <h3>My Solution</h3>
                     <p>
                         I decided to code my project in MATLAB, because it was the language I was most familar with at the time, as I had been using for in my engineering classes. I encoded the picture data with an AM signal and used a peak finder to read the data back. I encoded the information by taking red, green, and blue values of each row of pixels in the image to create a long vector which I then re-stacked into the image. After I had that working, I experimented a little with running short videos through the process and seeing what would happen if I recorded an image in an echoey room.
-                        <br><br>
+                        </p><p>
                         But I wasn't happy with the still images. They just weren't getting across what I wanted. So I decided to make the process happen in real time, or as close as I could get to it. This was a difficult task. I experimented with different timers and the MATLAB timerecorder object but I couldn't get each small chunk of the image to perfectly overlap without losing audio data in between. I had to go into the audiorecorder object, rip out its most basic components, and use it with my own object that assembled the image to finally make the process work. The image was then shown as a full-screen figure that was updated as quickly as the peakfinder could run- twice a second.
                     </p>
                     
@@ -34,11 +36,13 @@
                         A short video showing my progression when trying to transmit picture information over AM-encoded audio.
                     </div>
                     
-                    <div class="content-media"><img src="test1.jpg">One of my first Successful images, captured from a 10k signal.</div>
+                    <div class="content-media"><img src="test1.jpg">One of my first successful images, captured from a 10kHz signal.</div>
                     
                     <div class="content-media"><img src="fant-live.jpg">An early attempt to render images in realtime, chunks of data aren't aligned because of lost audio data in between collection.</div>
                     
-                    <div class="content-media"><img src="Echo1.jpg">An image recording made at 10k in a very echo-ey room</div>
+                    <div class="content-media"><img src="Echo1.jpg">An image recording made at 10kHz in a very echo-ey room</div>
+                    
+                    <div class="content-media"><iframe width="100%" height="300" scrolling="no" frameborder="no" style="margin-bottom: 7px;" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/258390997&amp;color=ff9900&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>An audio recording with encoded picture data. Listen at your own risk, as it is incredibly awful.</div>
                 </div>
             </div>
         </div>
