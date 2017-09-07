@@ -127,6 +127,9 @@ $( document ).ready( function() {
     //fill in projects links
     $( "#projects" ).load("projects-links.html");
     
+    //fill in writing links
+    $( "#writing" ).load("writing-links.html");
+    
     if(document.getElementById("page")){
         stats("page id!!");
         makemypage();
