@@ -48,7 +48,7 @@
         <h3 class="head"><a>Photo Albums</a></h3>
         <div class="body">
        		<a href = "https://goo.gl/photos/sSNp5qvRiXvecW187"  target="_blank" class = "albums" id="spgt">Music (2017)</a><br>
-            <a href = "https://goo.gl/photos/Cthp5yF2bGQvA4Uh9"  target="_blank" class = "albums" id="powel">Powel House Fringe (2016)</a><br>
+            <a href = "/Postcards-web-small.pdf"  target="_blank" class = "albums" id="post">Postcard Project (2016)</a><br>
             <a href = "https://goo.gl/photos/fW8Ps2w44so48RmG9"  target="_blank" class = "albums" id="dance">Master Dance (2015)</a><br>
             <a href = "https://goo.gl/photos/zsWDUJmK3HvDDecE9"  target="_blank" class = "albums" id="year">The year so far (2015)</a><br>
             <a href = "https://goo.gl/photos/64oKXu63ZqcSfMmm7"  target="_blank" class = "albums" id="byz">Byzantine Empire (2014)</a><br>
@@ -95,7 +95,7 @@ var me = "me.jpg";
 var wcwillem = "wcwillem.jpg";
 var spgt = "spgt.jpg";
 var altor ="altor.jpg";
-
+var post = "post.jpg";
 <!--//--><![CDATA[//><!--
 	var images = new Array()
 	function preload() {
@@ -105,7 +105,7 @@ var altor ="altor.jpg";
 		}
 	}
 	preload(
-		powel,dance,year,byz,sports,diy,grum,chairz,plp,me,wcwillem,spgt,altor
+		post,dance,year,byz,sports,diy,grum,chairz,plp,me,wcwillem,spgt,altor
 	);
 //--><!]]>
 
@@ -120,7 +120,7 @@ var altor ="altor.jpg";
         }
         
         //$('#powel').hover(changepic("red"),changepic("blue"));
-        $("#powel").hover(function() {changepic(powel);},function() {changepic(def);});
+        $("#post").hover(function() {changepic(post);},function() {changepic(def);});
         $("#dance").hover(function() {changepic(dance);},function() {changepic(def);});
         $("#year").hover(function() {changepic(year);},function() {changepic(def);});
         $("#friends").hover(function() {changepic(friends);},function() {changepic(def);});
