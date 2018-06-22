@@ -38,7 +38,7 @@
 
 
 <div id = "info" data-role="main" class="ui-content">
-    <h2 id="title">Willem Ytsma</h2>
+    <h2 id="title"><a href="https://plus.google.com/u/0/+WillemYtsma">Willem Ytsma</a></h2>
     <p id = "email">
     Email: <a href="mailto:wytsma4000000@gmail.com?Subject=About%20your%20photos" target="_top" id = "wow">wytsma4000000@gmail.com</a>
     </p>
@@ -55,8 +55,9 @@
             <a href = "https://goo.gl/photos/GhjLxdnB3JhhDmGa8" target="_blank" class = "albums" id="sports">Sports (2013)</a><br>
             <a href = "https://goo.gl/photos/rftCzJmML7B17XzP9" target="_blank"class = "albums" id="diy">DIY Theater (2013)</a><br>
         </div>
-        <h3 class="head">Videos</h3>
+        <h3 class="head"><a>Videos</a></h3>
         <div class="body">
+            <a href="https://vimeo.com/257381038" target="_blank" class="albums" id="cric">Cric.Map Pitch Video (2018)</a><br>
             <a href="https://www.youtube.com/watch?v=c8CuLqwc58M" target="_blank" class="albums" id="altor">Altor Unboxing Video (2017)</a><br>
             <a href = "https://www.youtube.com/watch?v=rme2LdyWmvw" target = "_blank" class = "albums" id="wcwillem">Why Choose Willem? (2016)</a><br>
             <a href="https://vimeo.com/181528368" target = "_blank" class = "albums" id="grum">Grumblefest Promo (2016)</a><br>
@@ -65,7 +66,7 @@
         </div>
     </div>
     <div id="spacer"></div>
-    <div id="copyright"> { © Willem Ytsma 2016-2017 } </div>
+    <div id="copyright"> { © Willem Ytsma 2016-2018 } </div>
 </div>
 
 
@@ -96,6 +97,7 @@ var wcwillem = "wcwillem.jpg";
 var spgt = "spgt.jpg";
 var altor ="altor.jpg";
 var post = "post.jpg";
+    var cric = "cric.jpg";
 <!--//--><![CDATA[//><!--
 	var images = new Array()
 	function preload() {
@@ -105,7 +107,7 @@ var post = "post.jpg";
 		}
 	}
 	preload(
-		post,dance,year,byz,sports,diy,grum,chairz,plp,me,wcwillem,spgt,altor
+		post,dance,year,byz,sports,diy,grum,chairz,plp,me,wcwillem,spgt,altor,cric
 	);
 //--><!]]>
 
@@ -137,6 +139,7 @@ var post = "post.jpg";
 		$("#wcwillem").hover(function() {changepic(wcwillem);},function() {changepic(def);});
 		$("#spgt").hover(function() {changepic(spgt);},function() {changepic(def);});
 		$("#altor").hover(function() {changepic(altor);},function() {changepic(def);});
+		$("#cric").hover(function() {changepic(cric);},function() {changepic(def);});
 
 </script>
 
