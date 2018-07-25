@@ -1,0 +1,211 @@
+
+<html>
+    <head>
+        
+        
+    </head>
+    <body>
+    
+    <div id="backgroundDiv"> 
+    </div>
+    
+    <div id="vid">
+        <div id = "wrapper">
+            <div id="wow">
+                <iframe id="myvid" src="https://www.youtube.com/embed/zv3Svk2yR9Y" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <img id="logo" src="logoboy.svg" alt="Cric.map Logo">
+        <img id="vidButton" src="videoplay.svg">
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup">
+        <form action="https://cricmap.us17.list-manage.com/subscribe/post?u=b860cec3f1f52fa3be9b5ce17&amp;id=e3cb7dfd5c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+                Subscribe to learn more:<br>
+                <div id="container">
+                    <input id="emailbox" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b860cec3f1f52fa3be9b5ce17_e3cb7dfd5c" tabindex="-1" value=""></div>
+                    <input id="sub" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                </div>
+            </div>
+        </form>
+        </div>
+
+        <!--End mc_embed_signup-->
+    </div>
+    </body>
+    
+    <style>
+    
+        html{
+            background: #00ff00;
+        }
+        
+        #backgroundDiv{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1001;
+            background-image: url(siteback.jpg);
+            background-position: center center;
+            background-size: cover;
+        }
+            
+        #vid{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,.75);
+            visibility: hidden;
+            z-index: 1001;
+            }
+        
+        #wrapper{
+            width: 80%;
+            height: auto;
+            max-height: 90%;
+            background:blue;
+            position: fixed;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+        }
+        
+        #wow{
+            width: 100%;
+            height: 0px;
+            padding-top:56.25%;
+            background: black;
+            position: relative;
+            display: block;
+        }
+        
+       #myvid{ 
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border: 10px solid solid 10px rgba(255, 255, 255, .7);
+       }
+        
+        #content{
+            position: relative;
+            width: 45%;
+            min-width: 400px;
+            margin: 5% auto;
+        }
+       
+        #logo{
+            position: relative;
+            height: 17%;
+            margin-bottom: 50px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+        
+        #vidbutton{
+            width: 100%;
+            position: relative;
+            border: solid 10px rgba(255, 255, 255, .7);
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+        
+        #mc_embed_signup{
+            position: relative;
+            margin: auto;
+            margin-top: 30px;
+            width: 100%;
+            color:white;
+            text-align: center;
+            font: 30px verdana;
+        }
+
+        #container {
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+        
+        #emailbox{
+            height:40px;
+            position: relative;
+            background: rgba(255, 255, 255, .5);;
+            border: none;
+            font: 25px verdana;
+            color: white;
+            margin: 0px 0px;
+            margin-right: 7px;
+            padding:none;
+            outline: solid 7px white;
+            min-width:200px;
+            flex: 1;
+        }
+        
+        #sub{
+            margin-top: 10px;
+            position: relative;
+            left: 0px;
+            width: 25%;
+            min-width: 140px;
+            height: 40px;
+            background: rgba(255, 255, 255, .5);
+            color: white;
+            border:none;
+            margin: 0px 0px;
+            font: 25px verdana;
+            outline: solid 7px white;
+            cursor: pointer;
+        }
+        
+        
+    </style>
+    
+    <script type="text/javascript">
+        
+        window.onload = function(){
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            if (h/w > 1.2){
+                document.getElementById("content").style.width = .85*w;
+            }else{
+                document.getElementById("content").style.width = .45*w;
+            }
+            
+        }
+        
+        window.onresize = function(){
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            if (h/w > 1.2){
+                document.getElementById("content").style.width = .85*w;
+            }else{
+                document.getElementById("content").style.width = .45*w;
+            }
+            
+        }
+
+        var bk = document.getElementById('vid');
+        bk.onclick = function () {
+           document.getElementById('vid').style.visibility = "hidden";
+           document.getElementById('myvid').src = "";
+		};
+		
+		var vidButton = document.getElementById('vidButton');
+		vidButton.onclick = function() {
+		    document.getElementById('vid').style.visibility = "visible";
+		    document.getElementById('myvid').src = "https://www.youtube.com/embed/zv3Svk2yR9Y?autoplay=1";
+		};
+		
+        </script>
+</html>

@@ -1,0 +1,204 @@
+
+body, html {
+    min-height: 100%;
+    background: #aaa;
+    font-family: montserrat;
+    overflow-x: hidden;
+}
+
+h1{
+    font-family: Orbitron black;
+}
+h2{
+    font-family: Orbitron black;
+}
+h3{
+    font-family: Orbitron black;
+}
+p{
+    font-size: 1.25em
+}
+
+.row{
+    padding: 1.25em 5em;
+    box-sizing: border-box;
+}
+
+.row h1{
+    width: 100%;
+    text-align: center;
+}
+
+.line{
+    background: black;
+    height: 3px;
+    width: 100%;
+    margin-top: 2em;
+    margin-bottom: 5em;
+}
+
+/* The hero image */
+.hero-image {
+    /* The image used */
+    background-image: url("img/cric.jpg");
+
+    /* Set a specific height */
+    height: 80%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-image img{
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.hero-image p{
+    font-size: 2.1em;
+    font-family: orbitron;
+}
+
+.hero-image button{
+    background: transparent;
+    border: 4px solid white;
+    height: 2em;
+    font-size: 2em;
+    margin-top: 40px;
+}
+/* Place text in the middle of the image */
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+#about-us-top{
+    background: white;
+    border-top: 10px solid #eee;
+    height: 20%;
+    position: static;
+    overflow: visible;
+    padding-bottom: 10%;
+}
+
+#about-us-top-wrapper{
+    text-align: center;
+    position: absolute;
+    display: block;
+    margin: auto;
+    bottom: -20px;
+    margin-bottom: 0px;
+}
+
+#description{
+    width: 100%;
+}
+
+#about-us{
+    background: white;
+    color: black;  
+    min-height: 50%;
+    border-bottom: 10px solid #eee;
+}
+#video-intro{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+}
+#video-row{
+    width:100%;
+    height: 0;
+    padding-top: 4em;
+    padding-bottom: 30%;
+    background: white;
+    border-bottom: 10px solid #eee;
+}
+
+#learn-more{
+    text-align: left;
+    padding-left: 5em;
+    padding-right: 0px;
+    height: 100%;
+}
+
+#learn-more h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#some-image{
+    background-image: url("img/box-product.jpeg");
+    padding: 0;
+    height: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#team-row{
+    background: white;
+    border-top: 10px solid #eee;
+}
+
+.team-member {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 225px;
+  height: 225px;
+  border: 7px solid #fff;
+}
+
+.team-member h4 {
+  margin-top: 25px;
+  margin-bottom: 0;
+  text-transform: none;
+}
+
+.team-member p {
+  margin-top: 0;
+}
+
+#about-video-wrapper{
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+.video-wrapper-l{
+    display: block;
+    position: relative;
+    background: black;
+    width: 100%;
+    height: 0px;
+    padding-bottom: 56.25%;
+}
+
+.video-wrapper-h{
+    display: block;
+    position: relative;
+    background: black;
+    width: 0;
+    height: 100%;
+    padding-left: 88.88888%;
+    padding-right: 88.888889%;
+}
+
+iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+}
