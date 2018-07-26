@@ -6,6 +6,16 @@ body, html {
     overflow-x: hidden;
 }
 
+body::-webkit-scrollbar{
+    width: 10px;
+    background: #aaa;
+    border-left: 2px solid #bbb;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #ddd;
+}
+
 h1{
     font-family: Orbitron black;
 }
@@ -40,12 +50,13 @@ p{
 /* The hero image */
 .hero-image {
     /* The image used */
-    background-image: url("img/cric.jpg");
+    background-image: url("img/hero.jpg");
 
     /* Set a specific height */
     height: 80%;
 
     /* Position and center the image to scale nicely on all screens */
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -62,12 +73,23 @@ p{
     font-family: orbitron;
 }
 
-.hero-image button{
+.btn{
     background: transparent;
     border: 4px solid white;
     height: 2em;
     font-size: 2em;
     margin-top: 40px;
+    color: white;
+    transition: .5s;
+}
+
+.btn:hover{
+    background: white;
+    border: 4px solid black;
+    height: 2em;
+    font-size: 2em;
+    margin-top: 40px;
+    color: black;    
 }
 /* Place text in the middle of the image */
 .hero-text {
@@ -99,26 +121,50 @@ p{
 
 #description{
     width: 100%;
+    min-height: 0;
 }
 
 #about-us{
     background: white;
     color: black;  
-    min-height: 50%;
     border-bottom: 10px solid #eee;
+    padding-bottom: 5%;
 }
 #video-intro{
     width: 100%;
     text-align: center;
     margin-bottom: 0;
 }
+
+#video-intro{
+    margin-bottom: 20px;
+}
+
 #video-row{
-    width:100%;
-    height: 0;
-    padding-top: 4em;
-    padding-bottom: 30%;
-    background: white;
-    border-bottom: 10px solid #eee;
+    background: #eee;
+    border-bottom: 10px solid #ddd;
+    padding-bottom: 3em;
+}
+
+#story-description-col{
+    padding-top: 3em;
+}
+
+#story-description-col p{
+    position: relative;
+    top: -6px;
+}
+
+
+
+#about-video-wrapper{
+    width: 94%;
+    min-width: 300px;
+    display: block;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 4em;
+    border: 12px solid white;
 }
 
 #learn-more{
@@ -139,6 +185,7 @@ p{
     background-image: url("img/box-product.jpeg");
     padding: 0;
     height: 60%;
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -151,14 +198,16 @@ p{
 }
 
 .team-member {
-  margin-bottom: 50px;
-  text-align: center;
+    margin-top: 3em;
+    margin-bottom: 50px;
+    text-align: center;
 }
 
 .team-member img {
   width: 225px;
-  height: 225px;
-  border: 7px solid #fff;
+  min-width: 50%;
+  border: 7px solid #eee;
+    border-radius: 30%;
 }
 
 .team-member h4 {
@@ -171,11 +220,79 @@ p{
   margin-top: 0;
 }
 
-#about-video-wrapper{
-    width: 50%;
-    display: block;
-    margin: auto;
+#another-image{
+    background-image: url("img/cric.jpg");
+    padding: 0;
+    height: 60%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
+
+#subscribe-contact-wrapper{
+    background: #aaa;
+    border-top: 10px solid #999;
+    height: 50%;
+}
+
+#subscribe{
+    height: 50%;
+}
+
+#mailing-list-form{
+    margin-top: 2em;
+}
+
+#emailbox{
+    width: 72%;
+    font-size: 1.4em;
+    border: 2px solid black;
+    background: #bbb;
+}
+
+.button{
+    height: 2.38em;
+    width: 17%;
+    background: black;
+    border: 2px solid black;
+    color: #bbb;
+    position: relative;
+    left: -4px;
+    top: -2px;
+}
+
+#social{
+    height: 50%;
+}
+
+ul.social-buttons {
+    position: absolute;
+    bottom: 3em;
+}
+
+ul.social-buttons li a {
+    font-size: 30px;
+    line-height: 40px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: black;
+
+}
+
+.fa{
+    width: 100%;
+}
+
+ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+  color: #ddd;
+}
+
 
 .video-wrapper-l{
     display: block;
